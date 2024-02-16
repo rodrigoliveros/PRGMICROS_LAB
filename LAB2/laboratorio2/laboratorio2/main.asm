@@ -20,34 +20,25 @@ OUT SPL, R16 // stack counter parte baja
 LDI R17, HIGH(RAMEND)
 OUT SPH, R17
 //******************************************************************************
-
+TABLA7SEG: .DB 0x00, 0xC, 0xB6, 0x9E, 0xCC, 0xDA, 0xFA, 0xE, 0xFF, 0xDE
 //******************************************************************************
 //Configuración MCU
 //******************************************************************************
 SETUP:
 //SALIDAS
-	SBI DDRD, PD2//G
-	SBI DDRD, PD3//F
-	SBI DDRD, PD4//A
-	SBI DDRD, PD5//B
-	SBI DDRD, PD6//E
-	SBI DDRD, PD7//D
-	
-	SBI DDRB, PB0//C
-	SBI DDRB, PB1//PT
+	LDI R19, 0xDE
+	LDI R20, 0x00
 
-//ENRTRADAS
+	OUT DDRD, R19 //CONFIGURAR PUERTO D COMO SALIDAS
+	OUT DDRC, R20 // CONFIGURAR PUERTO A COMO ENTRADAS
+	STS UCSR0B, R20
 	
-	CBI DDRC, PC0
-	CBI DDRC, PC1
-	CBI DDRC, PC2
-	CBI DDRC, PC3
-	CBI DDRC, PC4
-	CBI DDRC, PC5
+
 //******************************************************************************
 //Loop Infinito
 //******************************************************************************
-	
+	LDI R18, 0xFF
+	OUT PORTD, R18
 //******************************************************************************
 // Subrutinas
 //******************************************************************************
@@ -56,8 +47,6 @@ CONTCUATRO: //LAS ETIQUETAS SON PLACE HOLDER DE ALGO QUE VAS A LLAMAR DESPUES
 INCR18:
 	INC R18
 	CPI R18, 16 // COMPARA
-	
-
 	BRNE INCR18 //SALTA SI NO ES IGUAL
 	RET
 //******************************************************************************

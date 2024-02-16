@@ -1,19 +1,19 @@
 <ASSEMBLER_INFO>
  <VERSION>2.2.8</VERSION>
  <DEVICE>"ATmega328P"</DEVICE>
- <WORKING_DIR>C:\Users\rodri\Downloads\PMICROS\LAB2\laboratorio2\laboratorio2\Debug</WORKING_DIR>
+ <WORKING_DIR>C:\Users\rodri\Documents\PRGMICROS_LAB\LAB2\laboratorio2\laboratorio2\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\rodri\Downloads\PMICROS\LAB2\laboratorio2\laboratorio2\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Users\rodri\Documents\PRGMICROS_LAB\LAB2\laboratorio2\laboratorio2\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\Users\rodri\Downloads\PMICROS\LAB2\laboratorio2\laboratorio2\Debug\laboratorio2.obj</FILE>
+  <FILE>C:\Users\rodri\Documents\PRGMICROS_LAB\LAB2\laboratorio2\laboratorio2\Debug\laboratorio2.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>laboratorio2.hex</FILE>
@@ -23,8 +23,8 @@
   <FILE>laboratorio2.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <SETUP><FILE>C:\Users\rodri\Downloads\PMICROS\LAB2\laboratorio2\laboratorio2\main.asm</FILE><LINE>27</LINE></SETUP>
-  <CONTADOR><FILE>C:\Users\rodri\Downloads\PMICROS\LAB2\laboratorio2\laboratorio2\main.asm</FILE><LINE>54</LINE></CONTADOR>
-  <INCR18><FILE>C:\Users\rodri\Downloads\PMICROS\LAB2\laboratorio2\laboratorio2\main.asm</FILE><LINE>56</LINE></INCR18>
+  <SETUP><FILE>C:\Users\rodri\Documents\PRGMICROS_LAB\LAB2\laboratorio2\laboratorio2\main.asm</FILE><LINE>27</LINE></SETUP>
+  <CONTCUATRO><FILE>C:\Users\rodri\Documents\PRGMICROS_LAB\LAB2\laboratorio2\laboratorio2\main.asm</FILE><LINE>45</LINE></CONTCUATRO>
+  <INCR18><FILE>C:\Users\rodri\Documents\PRGMICROS_LAB\LAB2\laboratorio2\laboratorio2\main.asm</FILE><LINE>47</LINE></INCR18>
  </LABELS>
 </ASSEMBLER_INFO>
