@@ -41,13 +41,13 @@ SETUP:
 	LDI		ZL, LOW(TABLA7SEG << 1)
 	LDI		ZH, HIGH(TABLA7SEG << 1)
 	
-	//OSCILADOR
+	//Oscilador
 	LDI		R16, (1 << CLKPCE)	;Habilitamos el prescaler
 	STS		CLKPR, R16 
 	LDI		R16, 0				;16Hz
 	STS		CLKPR, R16
 	
-	//SALIDAS Y ENTRADAS
+	//Entradas y salidas
 	LDI		R16, 0x00	
 	STS		UCSR0B, R16			
 	LDI		R16, 0xFF	
@@ -55,7 +55,7 @@ SETUP:
 	LDI		R16, 0xFF	
 	OUT		DDRC, R16			;PORTC salida
 
-	//INTERRUPCIONES
+	//Interrupciones
 	LDI		R16, 0
 	OUT		TCCR0A, R16			;Contador
 	LDI		R16, 5
@@ -90,17 +90,17 @@ LOOP:
 	OUT		PORTD, R18				; SACAR A PORTD
 	CPI		R18, 0x0f				; Esta en el final?
 	BRNE	LOOP					; Regresar a loop si no esta en el final
-	LDI		ZL, LOW(TABLA7SEG << 1)	; 
+	LDI		ZL, LOW(TABLA7SEG << 1)	 
 	LDI		ZH, HIGH(TABLA7SEG << 1); Regresar al inicio de la tabla
 	LPM		R18, Z					; Cargar R18 la posición de z
 	OUT		PORTD, R18				; SACAR A PORTD
-	RJMP	LOOP					;
+	RJMP	LOOP					
 
 //******************************************************************************
 //SUBRUTINAS
 //******************************************************************************
 
-;VECTOR INTERRUPCION 1
+//Interrupción 1
 ISR_TIMER0:
 	PUSH	R16					;Guardamos para no perder counter ni resultados
 	IN		R16, SREG			
@@ -116,21 +116,21 @@ ISR_TIMER0:
 	POP		R16					
 	RETI
 
-;VECTOR INTERRUPCION 2
+//Interrupción 2
 ISR_PCINT0:
 	PUSH	R16					;Guardamos para no perder counter ni resultados
 	IN		R16, SREG			
 	PUSH	R16					
 
-BOTON1:
+B1:
 	IN		R19, PINB			
 	SBRC	R19, PB0			;PINB0 = 0 ?
-	RJMP	BOTON2				;No es igual, revisar boton 2
+	RJMP	B2				;No es igual, revisar boton 2
 	INC		R20					;Igual, incrementamos
 	OUT		PORTC, R20			
 	RJMP	SALIR				
 		
-BOTON2:
+B2:
 	IN		R19, PINB			
 	SBRC	R19, PB1			;PINB1 = 0 ?
 	RJMP	SALIR				;No es igual, salir de la rutina
